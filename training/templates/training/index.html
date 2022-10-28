@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+
+    {% if object_list %}
+        <h1>Here are all trainings:</h1>
+        <ul>
+            {% for training in object_list %}
+                <li><a href="{% url 'training:base' training.id %}">{{ training.name }}</a>
+            {% endfor %}
+            
+        </ul>
+    {% else %}
+        <h2>You don't have any trainings</h2>
+    {% endif %}
+
+{% endblock %}
