@@ -1,17 +1,34 @@
 {% extends 'home/base.html' %}
 
+{% block head %}
+    {% load static %}
+    <link href="{% static 'diet/style.css' %}" rel="stylesheet" >
+{% endblock %}
 {% block body %}
-
-    {% if object_list %}
-        <h1>Here are all diets:</h1>
-        <ul>
-            {% for diet in object_list %}
-                <li><a href="{% url 'diet:base' diet.id %}">{{ diet.name }}</a>
-            {% endfor %}
-            
-        </ul>
-    {% else %}
-        <h2>You don't have any diets</h2>
-    {% endif %}
+<div class="box">
+    {% for object in object_list %}
+        <div class="diet-box">
+            <div class="diet-picture">
+                <img class="picture" src="{{ object.image.url }}">
+            </div>
+            <div class="diet-grid">
+                <div class="author-picture">
+                    <img class="profile-picture rounded-circle" src="{{ object.author.profile.image.url }}">
+                </div>
+                <div class="diet-info">
+                    <div class="diet-title">
+                        <h1><a href="#">{{ object.name }}</a></h1>
+                    </div>
+                    <div class="diet-author">
+                        <a href="{% url 'login:login' %}" class="btn button-author" tabindex="-1" role="button" aria-disabled="true">{{ object.author }}</a>
+                    </div>
+                    <p class="diet-date">
+                        {{ object.date }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

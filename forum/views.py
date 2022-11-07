@@ -1,16 +1,20 @@
 from django.views import generic
 from .models import Post
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import render
+from .forms import AddPost
 
 
 class IndexView(generic.ListView):
-    template_name = 'forum/index.html'
     model = Post
-    def get_queryset(self):
-        return Post.objects.all()
+    template_name = 'forum/index.html'
+    ordering = ['-start_date']
 
 
 class DetailView(generic.DetailView):
     model = Post
-    template_name = 'forum/base.html'
+    template_name = 'forum/detail.html'
+
+
+class CreateView(generic.CreateView):
+    model = Post
+    form_class = AddPost
+    template_name = 'forum/add.html'

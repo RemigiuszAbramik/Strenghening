@@ -3,7 +3,8 @@ from .models import Training
 
 class IndexView(generic.ListView):
     template_name = 'training/index.html'
-
+    model = Training
+    
     def get_queryset(self):
         return Training.objects.all()
 

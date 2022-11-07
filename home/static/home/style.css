@@ -1,3 +1,36 @@
+*{
+    box-sizing: border-box;
+}
 body{
-    background: white url("media/images.jpg");
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Titilium Web', sans-serif;
+    background-color: black;
+    color: white;
+}  
+
+.navbar{
+    background-color: #292b2e;
+}
+.navbar a{
+    color: white;
+}
+.navbar a:hover{
+    color: #ff0042;
+}
+
+.btn{
+    background-color: #ff0042;
+    color:white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #ff0042;
+}
+
+.navbar-toggler{
+    background-color: #ff0042;
+    color: white;
 }

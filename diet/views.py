@@ -4,6 +4,7 @@ from .models import Diet
 class IndexView(generic.ListView):
     template_name = 'diet/index.html'
     model = Diet
+    
     def get_queryset(self):
         return Diet.objects.all()
 

@@ -1,17 +1,48 @@
 {% extends 'home/base.html' %}
 
+{% block head %}
+    {% load static %}
+    <link href="{% static 'forum/style.css' %}" rel="stylesheet" >
+{% endblock %}
 {% block body %}
-
-    {% if object_list %}
-        <h1>Here are all posts:</h1>
-        <ul>
-            {% for post in object_list %}
-                <li><a href="{% url 'forum:base' post.id %}">{{ post.name }}, {{ post.author }}</a>
-            {% endfor %}
-            
-        </ul>
-    {% else %}
-        <h2>You don't have any posts</h2>
-    {% endif %}
+<div class="box">
+    <div class="forum">
+        <div class="post-header">
+            <div class="post-header-author post-column center">
+                <h1>Question - Content</h1>
+            </div>
+            <div class="post-header-stats post-column center">
+                <h1>Stats</h1>
+            </div>
+            <div class="post-header-date post-column center">
+                <h1>Info</h1>
+            </div>
+        </div>
+    {% for object in object_list %}
+    <hr class="post-divider">
+        <div class="post">
+            <div class="post-author-icon post-column center">
+                <img class="rounded-circle post-image" src="{{ object.author.profile.image.url }}">
+            </div>
+            <div class="post-name post-column">
+                <div class="post-author">
+                    <a href="#"><h1>{{ object.name }}</h1></a>
+                </div>
+                <div class="post-content">
+                    <p>{{ object.context }}</p>
+                </div>
+            </div>
+            <div class="post-stats post-column center">
+                <span>24 answers</span>
+            </div>
+            <div class="post-info post-column">
+                Posted by <a href="#">{{ object.author }}</a>
+                <br>
+                {{ object.start_date }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

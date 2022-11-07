@@ -14,9 +14,13 @@
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'home/style.css' %}" rel="stylesheet" >
+    {% block head %}
+
+    {% endblock %}
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navTemplate" aria-controls="navTemplate" aria-expanded="false" aria-label="Condensed menu">
                 <i class="fa-solid fa-bars"></i>
@@ -51,35 +55,39 @@
                             <i class="fa fa-calculator" aria-hidden="true">&nbsp; BMI Calculator</i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa-solid fa-cart-shopping">&nbsp; Shop</i>
-                        </a>
-                    </li>
                 </ul>
             </div>
-            <div class="d-flex align-items-center">
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login:profile' %}">
-                            <img
-                                src="{{ user.profile.image.url }}"
-                                class="rounded-circle"
-                                height="25"
-                                alt="Black and White Portrait of a Man"
-                                loading="lazy"
-                            />
-                            {{request.user}}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login:logout' %}">
-                            <i class="fa-solid fa-power-off">&nbsp; &nbsp;</i>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
+            {% if user.is_authenticated %}
+                <div class="d-flex align-items-center">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login:profile' %}">
+                                <img
+                                    src="{{ user.profile.image.url }}"
+                                    class="rounded-circle"
+                                    height="25"
+                                    alt="Black and White Portrait of a Man"
+                                    loading="lazy"
+                                />
+                                {{request.user}}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login:logout' %}">
+                                <i class="fa-solid fa-power-off">&nbsp; &nbsp;</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <div class="d-flex align-items-center">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a href="{% url 'login:login' %}" class="btn" tabindex="-1" role="button" aria-disabled="true">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
         </div>
     </nav>
     {% block body %}

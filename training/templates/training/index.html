@@ -1,17 +1,34 @@
 {% extends 'home/base.html' %}
 
+{% block head %}
+    {% load static %}
+    <link href="{% static 'training/style.css' %}" rel="stylesheet" >
+{% endblock %}
 {% block body %}
-
-    {% if object_list %}
-        <h1>Here are all trainings:</h1>
-        <ul>
-            {% for training in object_list %}
-                <li><a href="{% url 'training:base' training.id %}">{{ training.name }}</a>
-            {% endfor %}
-            
-        </ul>
-    {% else %}
-        <h2>You don't have any trainings</h2>
-    {% endif %}
+<div class="box">
+    {% for object in object_list %}
+        <div class="training-box">
+            <div class="training-picture">
+                <img class="picture" src="{{ object.image.url }}">
+            </div>
+            <div class="training-grid">
+                <div class="author-picture">
+                    <img class="profile-picture rounded-circle" src="{{ object.author.profile.image.url }}">
+                </div>
+                <div class="training-info">
+                    <div class="training-title">
+                        <h1><a href="#">{{ object.name }}</a></h1>
+                    </div>
+                    <div class="training-author">
+                        <a href="{% url 'login:login' %}" class="btn button-author" tabindex="-1" role="button" aria-disabled="true">{{ object.author }}</a>
+                    </div>
+                    <p class="training-date">
+                        {{ object.date }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
