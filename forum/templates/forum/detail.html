@@ -1,49 +1,62 @@
 {% extends 'home/base.html' %}
 
+{% block head %}
+    {% load static %}
+    <link href="{% static 'forum/style_detail.css' %}" rel="stylesheet" >
+{% endblock %}
+
 {% block body %}
-
-<!--
-<article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
-    <div class="media-body">
-      <div class="article-metadata">
-        <a class="mr-2" href="#">{{ object.author }}</a>
-        <small class="text-muted">{{ object.start_date|date:"F d, Y" }}</small>
-        {% if object.author == user %}
-          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Delete</a>
-          </div>
-        {% endif %}
+<div class="box center">
+  <div class="container">
+    <div class="post-main">
+      <div class="post-author-icon post-column center">
+        <img class="rounded-circle post-image" src="{{ object.author.image.url }}">
       </div>
-      <h2 class="article-title">{{ object.name }}</h2>
-      <p class="article-content">{{ object.context }}</p>
+      <div class="post-name post-column">
+        <div class="post-author post-row">
+          <h1>{{ object.name }}</h1>
+        </div>
+        <div class="post-stats post-row">
+          <p><a href="#">{{ object.author }}</a> - {{ object.start_date }}</p>
+        </div>
+        <div class="post-content post-row">
+          <p>{{ object.context }}</p>
+        </div>
+      </div>
     </div>
-  </article>
-
-  -->
-
-<div class="container">
-  <div class="forum">
-
-    <div class="post">
-      <div class="post-author-icon">
-        <i class="fa-solid fa-dumbbell"></i>
-      </div>
-      <div class="post-name">
-        <h1><a href="#">Post Title</a></h1>
-      </div>
-      <div class="post-stats">
-        <span>24 answers</span>
-      </div>
-      <div class="post-info">
-        <a href="#">Author</a>
-        <br>
-        Posted on 12 October
-      </div>
-    <div>
+    <div class="post-header center">
+      <h1>Answers</h1>
+    </div>
+    {% if not object.comments.all %}
+      <h1> No comments yet </h1>
+    {% else %}
+      {% for comment in object.comments.all %}
+        <div class="post-main">
+          <div class="post-author-icon post-column center">
+            <img class="rounded-circle post-image" src="{{ comment.author.image.url }}">
+          </div>
+          <div class="post-name post-column">
+            <div class="post-stats post-row">
+              <p><a href="#">{{ comment.author }}</a> - {{ comment.start_date }}</p>
+            </div>
+            <div class="post-content post-row">
+              <p>{{ comment.context }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+    <div class="add-comment">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-post-comment">
+            <textarea name="context" cols="40" rows="10" class="form-control" placeholder="Details of Question" maxlength="1000" required="" id="id_context"></textarea>
+        </div>
+        <div class="form-post-button">
+            <button class="btn">Add Question</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
 {% endblock %}

@@ -30,13 +30,12 @@ p {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: auto;
 }
 
 .post-header{
         font-size: 14px;
         display:grid;
-        grid-template-columns: 65% 20% 15%;
+        grid-template-columns: 20% 44% 18% 18%;
         margin: 4px;
         border-radius: 5px;
 }
@@ -77,12 +76,20 @@ p {
 }
 
 .post-image{
-        width: auto;
-        height: auto;
-        max-width: 90px;
-        max-height: 90px;
+        width: 80px;
+        height: 80px;
 }
 
 .post-divider{
         background-color: #292b2e;
+}
+
+.btn{
+        background-color: #ff0042;
+        color:white;
+}
+    
+.btn:hover{
+        background-color: white;
+        color: #ff0042;
 }

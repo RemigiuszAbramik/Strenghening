@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 class AddPost(forms.ModelForm):
     
@@ -7,7 +7,10 @@ class AddPost(forms.ModelForm):
         model = Post
         fields = ('name', 'context')
 
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ask Question'}),
-            'context': forms.Textarea(attrs={'class': 'form-control'}),
-        }
+
+class AddComment(forms.ModelForm):
+    
+    class Meta:
+        model = Comment
+        fields = ('context',)
+

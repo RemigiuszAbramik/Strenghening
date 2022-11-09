@@ -1,0 +1,63 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.box{
+    height: 80%;
+    width: 100%;
+}
+
+.container{
+	height:100%;
+    margin: 0px;
+    padding: 0px;
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: black;
+}
+
+.card{
+    width: 600px;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: #292b2e;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+	color: white;
+
+}
+
+.question-row{
+    padding: 6px;
+    margin: 6px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-post-button{
+    margin: 0px;
+}
+
+.form-group{
+    padding: 0px;
+    margin: 0px;
+}

@@ -17,7 +17,7 @@
                 </div>
                 <div class="diet-info">
                     <div class="diet-title">
-                        <h1><a href="#">{{ object.name }}</a></h1>
+                        <h1><a href="{% url 'diet:detail' object.id %}">{{ object.name }}</a></h1>
                     </div>
                     <div class="diet-author">
                         <a href="{% url 'login:login' %}" class="btn button-author" tabindex="-1" role="button" aria-disabled="true">{{ object.author }}</a>

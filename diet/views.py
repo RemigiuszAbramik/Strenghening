@@ -11,4 +11,4 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Diet
-    template_name = 'diet/base.html'
+    template_name = 'diet/detail.html'
