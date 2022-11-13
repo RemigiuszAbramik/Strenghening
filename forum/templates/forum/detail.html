@@ -47,11 +47,9 @@
       {% endfor %}
     {% endif %}
     <div class="add-comment">
-      <form method="POST">
+      <form method="POST" action="">
         {% csrf_token %}
-        <div class="form-post-comment">
-            <textarea name="context" cols="40" rows="10" class="form-control" placeholder="Details of Question" maxlength="1000" required="" id="id_context"></textarea>
-        </div>
+        {{ form.as_table }}
         <div class="form-post-button">
             <button class="btn">Add Question</button>
         </div>
