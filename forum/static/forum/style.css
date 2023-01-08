@@ -1,95 +1,132 @@
-
-.box{
-        margin: 80px;
-        padding: 80px;
-        width: fs;
-}
-    
-
-a{
-        color: #ff0042;
+body{
+        background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255, 165, 0,1) 100%);
 }
 
-a:hover{
-        color:white;
+.container-fluid{
+        width: 80%;
+        background-color: white;
+        border-radius: 50px;
+        box-shadow: 0 20px 24px 0 rgba(0, 0, 0, 0.2), 0 21px 35px 0 rgba(0, 0, 0, 0.19);
+        margin-top: 10vh;
+        height: auto;
+        padding: 30px;
+}
+
+.profile-picture{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        height: 40px;
+}
+
+table td h4{
+        padding: 5px;
+        margin: 0;
+}
+
+table td p{
+        padding: 5px;
+        margin: 0;
+}
+
+table td a{
+        color: orangered;
+}
+
+table td a:hover{
+        color: black;
         text-decoration: none;
 }
 
-.post{
-        display: grid;
-        grid-template-columns: 10% 60% 10% 20%;
-        margin: 5px;
-        border-radius: 5px;
+
+.text-center{
+        text-align: center;
 }
 
-.post-author h1:hover{
-        color: white;
+.text-center h1{
+        padding: 30px;
+        font-size: 46;
+        font-weight: 600;
 }
 
-p {
-        white-space: nowrap;
+.text-center p{
+        margin-bottom: 30px;
+}
+
+.container-fluid a{
+        color: orangered;
+        font-weight: 600;
+}
+
+.container-fluid a:hover{
+        color: black;
+        text-decoration: none;
+}
+
+.fifty-chars {
+        width: 80ch;
         overflow: hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
 }
 
-.post-header{
-        font-size: 14px;
-        display:grid;
-        grid-template-columns: 20% 44% 18% 18%;
-        margin: 4px;
-        border-radius: 5px;
+
+@media screen and (max-width: 992px){ 
+        .fifty-chars {
+                width: 40ch;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+        }
+        .padding-bottom{
+                height:33vh !important;
+        }
 }
 
-.post-header h1{
-        color: white;
-        font-size: 18px;
-        font-weight: bolder;
-        padding: 10px;
-        margin: 0px;
+.activity{
+        text-align: center;
 }
 
-.post-content{
-        font-size: 14px;
-        padding: 4px;
+nav.page-navigation{
+        background-color: white !important;
 }
 
-.post h1{
-        font-size: 18px;
-        font-weight: bolder;
-        padding: 4px;
-        margin: 0;
-        color: #ff0042;
+.page-item.active .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: orangered;
+        border-color: orangered;
 }
 
-.post-column{
-        padding: 10px;
-        margin: 4px;
-        border-radius: 5px;
-        background-color: #292b2e;
-        color: white;
+.page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: orangered;
+        background-color: #fff;
+        border: 1px solid #e6e2de;
 }
 
-.center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.page-link:hover {
+        z-index: 2;
+        color: orangered;
+        text-decoration: none;
+        background-color: #efece9;
+        border-color: #e6e2de;
 }
 
-.post-image{
-        width: 80px;
-        height: 80px;
+.pagination{
+        padding-top: 40px;
 }
 
-.post-divider{
-        background-color: #292b2e;
+.padding-bottom{
+        height:10vh;
 }
 
-.btn{
-        background-color: #ff0042;
-        color:white;
-}
-    
-.btn:hover{
-        background-color: white;
-        color: #ff0042;
+.padding-top{
+        height: 10vh;
 }

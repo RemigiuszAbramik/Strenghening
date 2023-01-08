@@ -1,45 +1,31 @@
-html{
-    height: 100%;
-    width: 100%;
-}
-
 body{
-    height: 100%;
-    width: 100%;
+        background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255, 165, 0,1) 100%);
 }
 
-.box{
-    height: 80%;
-    width: 100%;
+.padding-top{
+	height: 20vh;
 }
 
-.container{
-	height:100%;
-    margin: 0px;
-    padding: 0px;
-	display: flex;
-	justify-content: center;
-	margin-top: auto;
-	margin-bottom: auto;
-	background-color: black;
+@media screen and (max-width: 992px){ 
+    .padding-bottom{
+            height: 33vh !important;
+    }
+
 }
 
-.card{
-    width: 600px;
-	margin-top: auto;
-	margin-bottom: auto;
-	background: #292b2e;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	padding: 20px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border-radius: 5px;
-	color: white;
 
+.padding-bottom{
+	height: 20vh;
+}
+
+.container-fluid{
+        width: 600px;
+        background-color: white;
+        border-radius: 50px;
+        box-shadow: 0 20px 24px 0 rgba(0, 0, 0, 0.2), 0 21px 35px 0 rgba(0, 0, 0, 0.19);
+        margin-top: 10vh;
+        height: auto;
+        padding: 30px;
 }
 
 .question-row{
@@ -60,4 +46,38 @@ body{
 .form-group{
     padding: 0px;
     margin: 0px;
+}
+
+.form-title h1{
+	font-weight: 600;
+}
+
+input:hover{
+	border: 1px solid orangered;
+}
+
+textarea:hover{
+	border: 1px solid orangered;
+}
+
+.form-control:focus{
+	border-color: black !important;
+	box-shadow: none !important;
+}
+
+
+.form-submit{
+    margin-top: 10px;
+    background-color: orangered;
+    color: white;
+    transition: 0.5s;
+    border-radius: 15px;
+    padding: 7px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border: 0;
+}
+
+.form-submit:hover{
+    background-color: rgba(255,69,0,0.7) !important;
 }

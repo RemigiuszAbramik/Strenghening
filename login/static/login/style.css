@@ -11,14 +11,14 @@ body{
 	justify-content: center;
 	margin-top: auto;
 	margin-bottom: auto;
-	background-color: black;
+	background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255, 165, 0,1) 100%);
 }
 
 .user_card {
-	width: 450px;
+	width: 550px;
 	margin-top: auto;
 	margin-bottom: auto;
-	background: #292b2e;
+	background: white;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -27,28 +27,29 @@ body{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border-radius: 5px;
-	color: white;
-	padding-top: 50px;
-	padding-bottom: 30px;
+	border-radius: 20px;
+	color: black;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 a{
-	color: white; 
+	color: orangered; 
 	text-decoration: none;
 
 }
 
 .ml-2{
-	color:#ff0042;
+	color:orangered;
+	font-weight: 550;
 }
 
 .ml-2:hover{
-	color:white;
+	color:black;
 }
 
 .login-logo:hover{
-	color: #ff0042;
+	color: black;
 }
 
 a:hover{
@@ -62,40 +63,50 @@ a:hover{
 }
 
 #form-title{
-	color: white;
+	color: black;
 	
 }
 
 .login_btn {
 	width: 100%;
-	background: #ff0042 !important;
+	background: orangered !important;
 	color: white !important;
+	transition: 0.5s;
 }
 .login_btn:hover {
 	box-shadow: none !important;
 	outline: 0px !important;
 	background: white !important;
-	color: #ff0042 !important;
+	color: orangered !important;
 }
 .login_container {
 	padding: 0 2rem;
 }
 .input-group-text {
-	background: #ff0042 !important;
+	background: orangered !important;
 	color: white !important;
 	border: 0 !important;
 	border-radius: 0.25rem 0 0 0.25rem !important;
 }
-.input_user,
-.input_pass:focus {
+.input_user, .input_pass:focus {
 	box-shadow: none !important;
 	outline: 0px !important;
 }
 
 #messages{
 	background: white;
-	color: #ff0042;
+	color: orangered;
 	padding: 10px;
 	margin: auto;
 
 }
+
+input:hover{
+	border: 1px solid orangered;
+}
+
+.form-control:focus{
+	border-color: black !important;
+	box-shadow: none !important;
+}
+

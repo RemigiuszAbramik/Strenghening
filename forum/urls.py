@@ -4,7 +4,9 @@ from . import views
 app_name = 'forum'
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('', views.indexView, name='index'),
     path('add/', views.CreatePost.as_view(), name='add'),
+    path('like/', views.like_comment, name='like'),
+    path('<slug:slug>/delete/', views.DeletePost.as_view(), name='delete'),
+    path('<slug:slug>/', views.DetailView.as_view(), name='detail'),
 ]
